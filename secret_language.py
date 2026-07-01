@@ -19,9 +19,9 @@ if E_or_D.lower() == "e":
     else:
         x=""
         y=""
-    for i in range(4):
-        x+=random.choice(letters) 
-        y+=random.choice(letters) 
+        for i in range(4):
+            x+=random.choice(letters) 
+            y+=random.choice(letters) 
         z= msg[1:]+msg[0]
     print("Here is your encoded message:  ",x+z+y)
 
