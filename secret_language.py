@@ -1,4 +1,3 @@
-#code language
 import random
 letters=("QWERTYUIOPLKJHGFDSAMNBVCXZqwertyuiopasdfghjklzxcvbnm")
 
@@ -8,14 +7,10 @@ E_or_D=input("Type \"E\"for encoding and Type \"D\" for decoding:").lower()
 if E_or_D.lower() == "e":
     msg=input("Enter your message for encoding : ")
 
-
-#code for encoding message <=3
-    if len(msg)<=3:
-        x= (msg[::-1])
-        print("Here is your encoded message:",x )
-
+    if len(msg)==0:
+        print("Message can't be empty!!")
     
-#code for encoding message >3
+#code for encoding message 
     else:
         x=""
         y=""
@@ -23,22 +18,21 @@ if E_or_D.lower() == "e":
             x+=random.choice(letters) 
             y+=random.choice(letters) 
         z= msg[1:]+msg[0]
-    print("Here is your encoded message:  ",x+z+y)
+        print("Here is your encoded message:  ",x+z+y)
 
 
 #code for decoding
 elif E_or_D.lower()== "d":
     print("WARNING: This program can decode only those message which are encodedby this program!!!!!\n\n")
-    msg=input("Enter your message for decoding : ")
-
-
-# code for decoding messaage<=
-    if len(msg)<=3:
-        print("Here is decoded message:  ", msg[::-1] )
+    msg=input("Enter your message for decoding : ").strip()
+    if len(msg) <9:
+        print("Wrong message")
     else:
         x= msg[4:-4]
         y=x[-1]+x[:-1]
         print("Here is your decoded message: ",y)
+
+#code for wrong commands
 
 
 else:
